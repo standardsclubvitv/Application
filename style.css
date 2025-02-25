@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('./assets/job297-ploy-07a-yellow-01.jpg'), linear-gradient(135deg, #FDF6E3, #FAE3C6);
+    background-size: 250px, cover; /* Ensures pattern visibility */
+    background-repeat: repeat, no-repeat; /* Repeats pattern but keeps gradient */
+    background-position: center;
+    background-blend-mode: overlay;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        background-size: 200px, cover; /* Slightly smaller pattern */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: 150px, cover; /* Further reduced pattern */
+    }
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    width: 100%;
+}
+
+header img {
+    width: 170px;
+    height: auto;
+}
+
+header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #b78628;
+}
+
+/* Container Styling */
+.container {
+    background: rgba(255, 255, 255, 0.529);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+    text-align: center;
+    width: 100%;
+    max-width: 420px;  /* Adjusted for better fit */
+    position: relative;
+    box-sizing: border-box; /* Prevents content overflow */
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;  /* Adds spacing between elements */
+}
+
+label {
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 3px;
+}
+
+input, select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d1a561;
+    background: #fff8e1;
+    outline: none;
+    width: 100%; /* Makes it full-width */
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    background: #b78628;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #8c691d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header img {
+        width: 80px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        width: 130px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    input, select {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* Animated Pop-up */
+.popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #28a745;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.popup.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup.error {
+    background: #dc3545;
+}
