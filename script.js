@@ -27,9 +27,14 @@ document.getElementById("domainForm").addEventListener("submit", async function 
     try {
         const response = await fetch("https://form-three-nu.vercel.app/submit-form", {  
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
             body: JSON.stringify(formData),
-        });
+            mode: "cors",  // ✅ Ensures CORS request is handled correctly
+            credentials: "omit" // ✅ Ensures no credentials are sent
+        });    
 
         const result = await response.json();
 
